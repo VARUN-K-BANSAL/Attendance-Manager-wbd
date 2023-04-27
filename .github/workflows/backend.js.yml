@@ -21,6 +21,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Start MongoDB
+      uses: supercharge/mongodb-github-action@1.8.0
+      with:
+        mongodb-version: ${{ matrix.mongodb-version }}
+        mongodb-username: varun
+        mongodb-password: 90977
+        mongodb-db: wbd-project
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
